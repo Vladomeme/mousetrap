@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "mousetrap",
+  "version": "${version}",
+
+  "name": "Mousetrap",
+  "description": "Keeps mouse position between screens instead of putting it in the middle every time.",
+  "authors": [
+    "Vladomeme"
+  ],
+  "contact": {
+  },
+
+  "license": "MIT",
+  "icon": "assets/mousetrap/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "net.mousetrap.main.MousetrapClient"
+    ]
+  },
+  "mixins": [
+    "mousetrap.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.21",
+    "fabric": "*",
+    "minecraft": "*",
+    "java": ">=17"
+  }
+}
