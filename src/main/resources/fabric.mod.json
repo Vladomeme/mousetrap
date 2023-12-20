@@ -23,7 +23,7 @@
   "mixins": [
     "mousetrap.mixins.json"
   ],
-
+  "accessWidener" : "mousetrap.accesswidener",
   "depends": {
     "fabricloader": ">=0.14.21",
     "fabric": "*",
