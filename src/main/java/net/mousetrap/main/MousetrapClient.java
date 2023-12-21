@@ -3,6 +3,7 @@ package net.mousetrap.main;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.screen.TitleScreen;
 import net.minecraft.client.util.InputUtil;
 import org.lwjgl.glfw.GLFW;
 
@@ -24,7 +25,8 @@ public class MousetrapClient implements ClientModInitializer {
         ((MouseAccess) client.mouse).updateCursorPos(client.getWindow().getHandle(), x, y);
         GLFW.glfwSetInputMode(client.getWindow().getHandle(), InputUtil.GLFW_CURSOR, InputUtil.GLFW_CURSOR_NORMAL);
         GLFW.glfwSetCursorPos(client.getWindow().getHandle(), x, y);
-        GLFW.glfwSetInputMode(client.getWindow().getHandle(), InputUtil.GLFW_CURSOR, InputUtil.GLFW_CURSOR_DISABLED);
+        if (MinecraftClient.getInstance().world != null)
+            GLFW.glfwSetInputMode(client.getWindow().getHandle(), InputUtil.GLFW_CURSOR, InputUtil.GLFW_CURSOR_DISABLED);
     }
 
     public static void blockCursor(boolean value) {
